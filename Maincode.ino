@@ -130,7 +130,7 @@ void setup()
 
 void button_press_detection()
 {
-  if (digitalRead(buttonPin1) == LOW) {
+  if (digitalRead(buttonPin1) == LOW) { 
     if (!buttonPressed1) {
       buttonPressed1 = true;
       button_count1 += 1;
@@ -199,7 +199,7 @@ void print_sensorvalues()
 
 void udp_message_detection()
 {
-  int packetSize = udp.parsePacket();
+  int packetSize = udp.parsePacket(); //wifi recieving code
   if (packetSize > 0) {
     memset(incomingPacket, 0, sizeof(incomingPacket));
     int len = udp.read(incomingPacket, sizeof(incomingPacket) - 1);
@@ -216,7 +216,7 @@ void udp_message_detection()
 
 void input_commands()
 {
-  if (Serial.available()) {
+  if (Serial.available()) {   //different commans corresponding to different functions to control robot in testing
     char input = Serial.read();
 
     if (input == '1') {
@@ -347,7 +347,7 @@ void lava_pit()
     mc.setSpeed(3, 100);
     end = millis();
   }
-  digitalServo1.write(55);
+  digitalServo1.write(55); //extend servo
   digitalServo2.write(85);
   star = millis();
   end = millis();
@@ -357,7 +357,7 @@ void lava_pit()
     end = millis();
   }
   digitalServo2.write(0);
-  digitalServo1.write(160);
+  digitalServo1.write(160); //retract servo
 }
 
 void loop()
@@ -371,10 +371,10 @@ void loop()
 
   input_commands();
 
-  if (buttonState == true){
+  if (buttonState == true){ //kill switch
     Serial.print("Start  ");
 
-    if (currentCommand == 0) {
+    if (currentCommand == 0) {  //commands for testing
       mc.setSpeed(1, 0);
       mc.setSpeed(2, 0);
       mc.setSpeed(3, 0);
@@ -392,7 +392,7 @@ void loop()
       mc.setSpeed(3, 500);
     }
 
-    if (currentCommand2 == 1) {
+    if (currentCommand2 == 1) { //servo commands for testing
       digitalServo2.write(160);
     } else if (currentCommand2 == 2) {
       digitalServo2.write(85);
