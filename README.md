@@ -98,16 +98,7 @@ Group-7-Term-3-Code/
 
 ## Authors & Contributors
 
-- **Group 7** - Term 3 Robotics Team
+- **Group 7** - Term 3 Robotics Team: Jingxuan Gao, Peter Neville, Alexander Brown and Afthab Shiraz
 
-## License
 
-[Specify your license here, e.g., MIT, GPL, etc.]
 
-## Contact & Support
-
-For questions or issues, please refer to the repository issues section or contact the development team.
-
----
-
-**Last Updated**: February 2026
